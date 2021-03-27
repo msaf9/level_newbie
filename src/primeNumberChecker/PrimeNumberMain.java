@@ -1,5 +1,10 @@
 package primeNumberChecker;
 
+/*Prime number program
+To check a given number is prime or not
+Try out with the following inputs: 1, 2, 21, 101
+*/
+
 import java.util.Scanner;
 
 public class PrimeNumberMain {
