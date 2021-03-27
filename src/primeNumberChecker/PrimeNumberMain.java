@@ -15,26 +15,16 @@ public class PrimeNumberMain {
 		Scanner sc = new Scanner(System.in);
 
 //		variables initialized
-		int number, i = 0;
+		int number;
 		boolean primeFlag = false;
 
-//		Logic to check primeFlag
 		try {
 //			Taking number input from user
 			System.out.print("Please enter a number to check whether it is a prime number or not: ");
 			number = sc.nextInt();
 
 			if (number > 0) {
-				if (number == 1) {
-					primeFlag = true;
-				} else {
-					for (i = 2; i <= number / 2; ++i) {
-						if (number % i == 0) {
-							primeFlag = true;
-							break;
-						}
-					}
-				}
+				primeFlag = nonPrime(number, primeFlag);
 			} else {
 				if (number == 0) {
 					primeFlag = true;
@@ -63,6 +53,21 @@ public class PrimeNumberMain {
 		}
 
 		sc.close();
+	}
+
+	private static boolean nonPrime(int number, boolean primeFlag) {
+		int i;
+		if (number == 1) {
+			primeFlag = true;
+		} else {
+			for (i = 2; i <= number / 2; ++i) {
+				if (number % i == 0) {
+					primeFlag = true;
+					break;
+				}
+			}
+		}
+		return primeFlag;
 	}
 
 }
